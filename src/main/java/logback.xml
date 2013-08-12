@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<Target>System.out</Target>
+		<encoder>
+			<Pattern>wws %d{MM/dd HH:mm:ss.SSS} %t %-5p %c{64} - %m%n</Pattern>
+		</encoder>
+	</appender>
+
+	<!-- jp.ac.chitose.* のログを表示 -->
+	<logger name="org.wicket_sapporo">
+		<level value="INFO" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+	<!-- org.* のログを表示 -->
+	<logger name="org">
+		<level value="WARN" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+		 
+	<!-- java.* のログを表示 -->
+	<logger name="java">
+		<level value="WARN" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</logger>
+	
+	<!-- sun.* のログを表示 -->
+	<logger name="sun">
+		<level value="WARN" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<!-- その他全てのログを表示 -->
+	<!-- 
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+ -->
+</configuration>
