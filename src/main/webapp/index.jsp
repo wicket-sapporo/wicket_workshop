@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<p>このページはJSPで動いています。</p>
+<p>このページはJSPを使って表示されています。</p>
 <a href="./ws01/">WorkShop01</a>
 
 </body>

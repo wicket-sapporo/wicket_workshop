@@ -19,7 +19,7 @@ package org.wicket_sapporo.workshop01;
 import org.apache.wicket.Page;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.resource.DynamicJQueryResourceReference;
-import org.wicket_sapporo.workshop01.page.WS01HomePage;
+import org.wicket_sapporo.workshop01.page.WS01IndexPage;
 
 /**
  * Wicketアプリケーションの全体の設定などを記述するクラス.
@@ -42,7 +42,7 @@ public class WorkShop01Application extends WebApplication {
 
 	@Override
 	public Class<? extends Page> getHomePage() {
-		return WS01HomePage.class;
+		return WS01IndexPage.class;
 	}
 
 }
