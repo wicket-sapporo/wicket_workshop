@@ -21,6 +21,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.model.ResourceModel;
 import org.wicket_sapporo.workshop01.page.basics.SimplePage;
+import org.wicket_sapporo.workshop01.page.form.FormPage;
 
 
 /**
@@ -44,6 +45,7 @@ public class WS01IndexPage extends WS01TemplatePage {
 		});
 
 		add(new ResouceBookmarkablePageLink<>("toSimplePage", SimplePage.class));
+		add(new ResouceBookmarkablePageLink<>("toFormPage", FormPage.class));
 	}
 
 

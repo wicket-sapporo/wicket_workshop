@@ -1,4 +1,5 @@
-wicket_workshop
+Wicket Workshop
 ===============
 
-Wicket-Spporo's Sample File.
+This is a sample web-application using [Apache Wicket](http://wicket.apache.org/) for wicket-sapporo workshop.
+
