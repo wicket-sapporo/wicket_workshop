@@ -28,6 +28,10 @@ import org.apache.wicket.markup.html.WebPage;
 public abstract class WS01TemplatePage extends WebPage {
 	private static final long serialVersionUID = 1L;
 
+	public WS01TemplatePage() {
+		this.add(homePageLink("toHomePage"));
+	}
+
 	@Override
 	public void renderHead(IHeaderResponse response) {
 		super.renderHead(response);

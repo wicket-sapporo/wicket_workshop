@@ -4,8 +4,10 @@ import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.basic.MultiLineLabel;
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+import org.wicket_sapporo.workshop01.page.WS01IndexPage;
 
 /**
  * Wicketの基本的な使い方の解説ページ
@@ -48,7 +50,7 @@ public class SimplePage extends WebPage {
 
 
 		// コンポーネントを独自に拡張することもできます。
-		String message4 = "緑色になっていますか。";
+		String message4 = "この文字は緑色になっていますか。";
 
 		IModel<String> model4 = new Model<>(message4);
 
@@ -63,6 +65,19 @@ public class SimplePage extends WebPage {
 		};
 
 		add(label4);
+
+
+		// ほかのページへのリンクも、Javaプログラムで制御できます。
+		Link<Void> link = new Link<Void>("link") {
+			private static final long serialVersionUID = 7204379487998423007L;
+
+			@Override
+			public void onClick() {
+				setResponsePage(WS01IndexPage.class);
+			}
+		};
+
+		add(link);
 
 	}
 
