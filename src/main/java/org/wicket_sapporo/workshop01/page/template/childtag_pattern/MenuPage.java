@@ -22,7 +22,7 @@ public class MenuPage extends HeaderAndFooterPage {
 
 			@Override
 			public void onClick() {
-				setResponsePage(Content01Page.class);
+				setResponsePage(Content02Page.class);
 			}
 
 		});
