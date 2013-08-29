@@ -29,10 +29,10 @@ import org.wicket_sapporo.workshop01.page.form.bean.FormPageBean;
  *
  * @author Hiroto Yamakawa
  */
-public class MinimalFormPage extends WebPage {
+public class FormPage extends WebPage {
 	private static final long serialVersionUID = -4397215481396142458L;
 
-	public MinimalFormPage() {
+	public FormPage() {
 
 		// フォームの入力値を格納するオブジェクトを用意する.
 		FormPageBean fromPageBean = new FormPageBean();
