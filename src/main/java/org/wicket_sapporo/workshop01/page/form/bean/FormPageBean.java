@@ -49,7 +49,7 @@ public class FormPageBean implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return name + ", " + age + ", " + introduction;
+		return "[name : " + name + "\nage : " + age + "\nintroduction : " + introduction + "]";
 	}
 
 	/**

@@ -43,7 +43,8 @@ public class MinimalFormPage extends WebPage {
 
 			protected void onSubmit() {
 				super.onSubmit();
-				// 値の確認は省略.
+				// getModelObjectメソッドで、コンポーネントにセットされたModelの中身を取得できます
+				System.out.println(getModelObject().toString());
 				setResponsePage(new FormConfirmationPage(getModel()));
 			}
 		};
