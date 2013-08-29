@@ -30,13 +30,13 @@ import org.wicket_sapporo.workshop01.page.WS01IndexPage;
  *
  * @author Hiroto Yamakawa
  */
-public class MinimalSimplePage extends WebPage {
+public class SimplePage extends WebPage {
 	private static final long serialVersionUID = -1907292494724474104L;
 
 	/**
 	 * デフォルトコンストラクタ.
 	 */
-	public MinimalSimplePage() {
+	public SimplePage() {
 		// 1. ページに表示したいオブジェクトを用意します
 		String message1 = "こんにちは！";
 

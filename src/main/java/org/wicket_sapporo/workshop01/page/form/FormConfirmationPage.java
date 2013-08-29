@@ -18,6 +18,7 @@ package org.wicket_sapporo.workshop01.page.form;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.basic.MultiLineLabel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.IModel;
 import org.wicket_sapporo.workshop01.page.form.bean.FormPageBean;
@@ -39,7 +40,10 @@ public class FormConfirmationPage extends WebPage {
 		// formPageModelにラップされたオブジェクト（=前ページから渡されたformPageBean）の値とリンクする.
 		add(new Label("name"));
 		add(new Label("age"));
-		add(new Label("introduction"));
+		add(new MultiLineLabel("introduction"));
+
+		// homePageLink は、WebApplicationクラスのサブクラスでHomePageに設定されたページへのリンクを作成します。
+		add(homePageLink("toHomePage"));
 	}
 
 }
