@@ -33,11 +33,11 @@ public class FormConfirmationPage extends WebPage {
 
 	public FormConfirmationPage(IModel<FormPageBean> formPageModel) {
 		// setDefaultModel(IModel) は、ページのデフォルトのModelをセットするメソッド.
-		// 下のコードが CompoundPropertyModel を想定しているので、強制的にCompoundPropertyModel で再度ラップしておく.
+		// 下のコードが CompoundPropertyModel を想定しているので、強制的に CompoundPropertyModel で再度ラップしておく.
 		setDefaultModel(CompoundPropertyModel.of(formPageModel));
 
 		// CompoundPropertyModelの能力で、ページにaddされるコンポーネントの値は、
-		// formPageModelにラップされたオブジェクト（=前ページから渡されたformPageBean）の値とリンクする.
+		// formPageModelにラップされたオブジェクト（=前ページから渡されたformPageBeanのメンバ変数）の値とリンクする.
 		add(new Label("name"));
 		add(new Label("age"));
 		add(new MultiLineLabel("introduction"));

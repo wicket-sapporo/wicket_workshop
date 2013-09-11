@@ -37,7 +37,6 @@ public class WorkShop01Application extends WebApplication {
 		getMarkupSettings().setDefaultMarkupEncoding("UTF-8");
 		// IE6/7/8 は JQuery1, それ以外はJQuery2を利用
 		getJavaScriptLibrarySettings().setJQueryReference(new DynamicJQueryResourceReference());
-
 	}
 
 	@Override

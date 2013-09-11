@@ -37,11 +37,11 @@ public class FormPage extends WebPage {
 		// フォームの入力値を格納するオブジェクトを用意する.
 		FormPageBean fromPageBean = new FormPageBean();
 
-		// 各コンポーネントの値を、 wicket:id 同じ名前の fromPageBean の変数の値とリンクできる CompoundPropertyModel を用意する.
+		// 各コンポーネントの値を、 wicket:id 同じ名前のメンバ変数の値とリンクできる CompoundPropertyModel を用意する.
 		IModel<FormPageBean> formPageModel = new CompoundPropertyModel<>(fromPageBean);
 
 		// Formコンポーネントに formPageModelをセットする.
-		// CompoundPropertyModelの能力で、このFormコンポーネントにaddされた各コンポーネントの値と、fromPageBeanの変数の値がリンクされる.
+		// CompoundPropertyModelの能力で、このFormコンポーネントにaddされた子コンポーネントは、wicket:idに合わせてfromPageBeanのメンバ変数を参照する.
 		Form<FormPageBean> form = new Form<FormPageBean>("form", formPageModel) {
 			private static final long serialVersionUID = 6843470916943201357L;
 
@@ -68,18 +68,24 @@ public class FormPage extends WebPage {
 		add(form);
 
 		// 氏名部分のテキスト入力フォームコンポーネント.
+		// Modelがセットされていないが、formにセットされたCompounrPropertyModelの能力で、 fromPageBean のname変数を参照する
 		TextField<String> name = new TextField<>("name");
 
+		// HTMLのwicket:idの階層に合わせて、formにaddする
 		form.add(name);
 
 		// 年齢部分のテキスト入力フォームコンポーネント.
+		// Modelがセットされていないが、CompounrPropertyModelの能力で、 fromPageBean のage変数を参照する
 		TextField<Integer> age = new TextField<>("age");
 
+		// HTMLのwicket:idの階層に合わせて、formにaddする
 		form.add(age);
 
 		// 自己紹介部分のテキストエリアコンポーネント.
+		// Modelがセットされていないが、CompounrPropertyModelの能力で、 fromPageBean の introduction 変数を参照する
 		TextArea<String> introduction = new TextArea<>("introduction");
 
+		// HTMLのwicket:idの階層に合わせて、formにaddする
 		form.add(introduction);
 
 	}

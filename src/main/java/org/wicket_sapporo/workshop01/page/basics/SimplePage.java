@@ -37,13 +37,13 @@ public class SimplePage extends WebPage {
 	 * デフォルトコンストラクタ.
 	 */
 	public SimplePage() {
-		// 1. ページに表示したいオブジェクトを用意します
+		// 1. 表示したいデータ（オブジェクト）を用意する.
 		String message1 = "こんにちは！";
 
 		// 2. 表示したいオブジェクトをModelオブジェクトでラップします
 		IModel<String> model1 = new Model<>(message1);
 
-		// 3. Modelをコンポーネントにセットします
+		// 3. Modelを、対応するHTMLのwicket:id用のコンポーネントにセットします
 		Label label1 = new Label("label1", model1);
 
 		// 4. コンポーネントをページにaddします
