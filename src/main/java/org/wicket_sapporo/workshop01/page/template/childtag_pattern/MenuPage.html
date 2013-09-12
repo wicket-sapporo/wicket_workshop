@@ -11,14 +11,18 @@
 		<!-- wicket:extend 要素の中身が、スーパークラスのHTMLのwicket:child要素の中身として反映される -->
 		<div>
 			<div class="row">
-				<div class="span3" style="background-color: #eea">
+				<div class="span3">
+				<div style="background-color: #eea">
 						<p>MenuPage.html</p>
 						<p>メニュー部分です</p>
 						<ul>
-							<li><a wicket:id="toContent01Page">リンク1</a></li>
-							<li><a wicket:id="toContent02Page">リンク2</a></li>
+							<li><a wicket:id="toHeaderAndFooterPage">HeaderAndFooterPaeg</a></li>
+							<li><a wicket:id="toMenuPage">MenuPage</a></li>
+							<li><a wicket:id="toContent01Page">Content01Page</a></li>
+							<li><a wicket:id="toContent02Page">Content02Page</a></li>
 						</ul>
 					</div>
+				</div>
 				<div class="span9">
 					<wicket:child />
 				</div>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<wicket:panel>
+		<!-- wicket:panel 要素の中身が、呼び出し元のwicket:idのタグ要素として反映される -->
+		<div style="background-color: #aee">
+			<p>MenuPanel.html</p>
+			<p>メニュー部分です</p>
+			<ul>
+				<li><a wicket:id="toBasePage">BasePage</a></li>
+				<li><a wicket:id="toContent03Page">Content03Page</a></li>
+				<li><a wicket:id="toContent04Page">Content04Page</a></li>
+			</ul>
+		</div>
+	</wicket:panel>
+</body>
+</html>

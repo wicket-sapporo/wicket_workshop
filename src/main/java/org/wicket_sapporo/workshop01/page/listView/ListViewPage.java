@@ -46,6 +46,7 @@ public class ListViewPage extends WebPage {
 		};
 		add(cityNameListView);
 
+
 		IModel<List<SiteBean>> siteListModel = new ListModel<>(getSiteBeanList());
 
 		ListView<SiteBean> siteBeanListView = new ListView<SiteBean>("siteListView", siteListModel) {

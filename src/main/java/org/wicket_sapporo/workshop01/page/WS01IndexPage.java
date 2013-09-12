@@ -26,7 +26,7 @@ import org.wicket_sapporo.workshop01.page.form.FormPage;
 import org.wicket_sapporo.workshop01.page.form.saving.SavingFormPage;
 import org.wicket_sapporo.workshop01.page.listView.ListViewPage;
 import org.wicket_sapporo.workshop01.page.template.childtag_pattern.Content01Page;
-import org.wicket_sapporo.workshop01.page.template.replace_pattern.BasePage;
+import org.wicket_sapporo.workshop01.page.template.replace_pattern.Content03Page;
 
 
 /**
@@ -56,7 +56,7 @@ public class WS01IndexPage extends WS01TemplatePage {
 		add(new ResouceBookmarkablePageLink<>("toWasteFormPage", SavingFormPage.class));
 		add(new ResouceBookmarkablePageLink<>("toListViewPage", ListViewPage.class));
 		add(new ResouceBookmarkablePageLink<>("toContent01Page", Content01Page.class));
-		add(new ResouceBookmarkablePageLink<>("toContent03Page", BasePage.class));
+		add(new ResouceBookmarkablePageLink<>("toContent03Page", Content03Page.class));
 
 	}
 

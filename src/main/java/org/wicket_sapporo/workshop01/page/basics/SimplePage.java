@@ -93,6 +93,8 @@ public class SimplePage extends WebPage {
 
 			@Override
 			public void onClick() {
+				// setResponsePage(ページクラス) もしくは setResponsePage(ページクラスのオブジェクト)で、
+				// 新しいWebPageのオブジェクトを作成し、遷移先を設定します
 				setResponsePage(WS01IndexPage.class);
 			}
 		};

@@ -31,6 +31,26 @@ public class MenuPage extends HeaderAndFooterPage {
 	 */
 	public MenuPage() {
 
+		add(new Link<Void>("toHeaderAndFooterPage") {
+			private static final long serialVersionUID = 3057630357207968701L;
+
+			@Override
+			public void onClick() {
+				setResponsePage(HeaderAndFooterPage.class);
+			}
+
+		});
+
+		add(new Link<Void>("toMenuPage") {
+			private static final long serialVersionUID = 3057630357207968701L;
+
+			@Override
+			public void onClick() {
+				setResponsePage(MenuPage.class);
+			}
+
+		});
+
 		add(new Link<Void>("toContent01Page") {
 			private static final long serialVersionUID = 3057630357207968701L;
 

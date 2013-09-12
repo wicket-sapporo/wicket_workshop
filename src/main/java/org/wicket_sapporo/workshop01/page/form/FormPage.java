@@ -60,7 +60,7 @@ public class FormPage extends WebPage {
 				// fromPageBean の値に、入力フォームの値が反映されていることを確認する.
 				System.out.println(formPageBean.toString());
 
-				// 値が反映された formPageModel を次のページへセット.
+				// 値が反映された formPageModel をFormConfirmationPageのインスタンスにセットして、遷移先として設定
 				setResponsePage(new FormConfirmationPage(getModel()));
 			}
 		};

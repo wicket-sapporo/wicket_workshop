@@ -35,6 +35,9 @@ public class HeaderAndFooterPage extends WebPage {
 	 */
 	public HeaderAndFooterPage() {
 		add(new Label("headerLabel", Model.of("ヘッダ部分です")));
+
+		add(homePageLink("homePageLink"));
+
 		add(new Label("fotterLabel", Model.of("フッタ部分です")));
 	}
 
