@@ -87,6 +87,7 @@ public class SimplePage extends WebPage {
 
 
 		// ほかのページへのリンクも、Javaプログラムで制御できます。
+		// コンポーネントの設定や拡張は、このように無名クラスを使って行うか、コンポーネントのサブクラスを作成します。
 		Link<Void> link = new Link<Void>("link") {
 			private static final long serialVersionUID = 7204379487998423007L;
 

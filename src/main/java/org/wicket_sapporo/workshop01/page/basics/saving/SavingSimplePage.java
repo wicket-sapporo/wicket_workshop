@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.wicket_sapporo.workshop01.page.basics.minimal;
+package org.wicket_sapporo.workshop01.page.basics.saving;
 
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.markup.html.WebPage;
@@ -30,13 +30,13 @@ import org.wicket_sapporo.workshop01.page.WS01IndexPage;
  *
  * @author Hiroto Yamakawa
  */
-public class MinimalSimplePage extends WebPage {
+public class SavingSimplePage extends WebPage {
 	private static final long serialVersionUID = 1556716255512948829L;
 
 	/**
 	 * Construct.
 	 */
-	public MinimalSimplePage() {
+	public SavingSimplePage() {
 		add(new Label("label1", Model.of("こんにちは！")));
 
 		add(new Label("label2", Model.of("本日は wicket-sapporo へようこそ！")));

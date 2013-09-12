@@ -55,42 +55,42 @@ public class FormPageBean implements Serializable {
 	/**
 	 * @return the name
 	 */
-	public final String getName() {
+	public String getName() {
 		return name;
 	}
 
 	/**
 	 * @param name the name to set
 	 */
-	public final void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
 	/**
 	 * @return the age
 	 */
-	public final int getAge() {
+	public int getAge() {
 		return age;
 	}
 
 	/**
 	 * @param age the age to set
 	 */
-	public final void setAge(int age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 
 	/**
 	 * @return the introduction
 	 */
-	public final String getIntroduction() {
+	public String getIntroduction() {
 		return introduction;
 	}
 
 	/**
 	 * @param introduction the introduction to set
 	 */
-	public final void setIntroduction(String introduction) {
+	public void setIntroduction(String introduction) {
 		this.introduction = introduction;
 	}
 

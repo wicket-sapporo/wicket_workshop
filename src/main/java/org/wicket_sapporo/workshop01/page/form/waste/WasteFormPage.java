@@ -14,48 +14,62 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.wicket_sapporo.workshop01.page.form.minimal;
+package org.wicket_sapporo.workshop01.page.form.waste;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextArea;
 import org.apache.wicket.markup.html.form.TextField;
-import org.apache.wicket.model.CompoundPropertyModel;
+import org.apache.wicket.model.IModel;
+import org.apache.wicket.model.Model;
 import org.wicket_sapporo.workshop01.page.form.FormConfirmationPage;
 import org.wicket_sapporo.workshop01.page.form.bean.FormPageBean;
 
 /**
- * FormPage のコードを極力簡潔に書いたページ.
+ * SavingFormPage のコードを CompoundPropertyModel を使わずに Model だけを使って書いたページ.
+ * こうした実装でも勿論問題はないが、SavingFormPage に比べれば、コード量は増えている。
  *
  * @author Hiroto Yamakawa
  */
-public class MinimalFormPage extends WebPage {
+public class WasteFormPage extends WebPage {
 	private static final long serialVersionUID = -17636676484983833L;
+
+	// FormPageBeanに格納せずに、入力用コンポーネントそれぞれのModelを用意する.
+	private IModel<String> nameModel;
+	private IModel<Integer> ageModel;
+	private IModel<String> introductionModel;
 
 	/**
 	 * Construct.
 	 */
-	public MinimalFormPage() {
+	public WasteFormPage() {
+		nameModel = Model.of("");
+		ageModel = Model.of(0);
+		introductionModel = Model.of("");
 
-		Form<FormPageBean> form = new Form<FormPageBean>("form", new CompoundPropertyModel<>(new FormPageBean())) {
+		// 各コンポーネントから直接モデルを参照するので、FormにはModelをセットしない
+		Form<Void> form = new Form<Void>("form") {
 			private static final long serialVersionUID = 6843470916943201357L;
 			@Override
 
 			protected void onSubmit() {
 				super.onSubmit();
-				// getModelObjectメソッドで、コンポーネントにセットされたModelの中身を取得できます
-				System.out.println(getModelObject().toString());
-				setResponsePage(new FormConfirmationPage(getModel()));
+				FormPageBean bean = new FormPageBean();
+				bean.setName(nameModel.getObject());
+				bean.setAge(ageModel.getObject());
+				bean.setIntroduction(introductionModel.getObject());
+				System.out.println(bean.toString());
+				setResponsePage(new FormConfirmationPage(Model.of(bean)));
 			}
 		};
 
 		add(form);
 
-		form.add(new TextField<>("name"));
+		form.add(new TextField<>("name", nameModel));
 
-		form.add(new TextField<>("age"));
+		form.add(new TextField<>("age", ageModel));
 
-		form.add(new TextArea<>("introduction"));
+		form.add(new TextArea<>("introduction", introductionModel));
 
 	}
 

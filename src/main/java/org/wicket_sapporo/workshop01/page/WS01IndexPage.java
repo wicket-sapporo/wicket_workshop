@@ -21,9 +21,10 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.model.ResourceModel;
 import org.wicket_sapporo.workshop01.page.basics.SimplePage;
-import org.wicket_sapporo.workshop01.page.basics.minimal.MinimalSimplePage;
+import org.wicket_sapporo.workshop01.page.basics.saving.SavingSimplePage;
 import org.wicket_sapporo.workshop01.page.form.FormPage;
-import org.wicket_sapporo.workshop01.page.form.minimal.MinimalFormPage;
+import org.wicket_sapporo.workshop01.page.form.saving.SavingFormPage;
+import org.wicket_sapporo.workshop01.page.listView.ListViewPage;
 import org.wicket_sapporo.workshop01.page.template.childtag_pattern.Content01Page;
 import org.wicket_sapporo.workshop01.page.template.replace_pattern.BasePage;
 
@@ -49,9 +50,11 @@ public class WS01IndexPage extends WS01TemplatePage {
 		});
 
 		add(new ResouceBookmarkablePageLink<>("toSimplePage", SimplePage.class));
-		add(new ResouceBookmarkablePageLink<>("toMinimalSimplePage", MinimalSimplePage.class));
+		add(new ResouceBookmarkablePageLink<>("toSavingSimplePage", SavingSimplePage.class));
 		add(new ResouceBookmarkablePageLink<>("toFormPage", FormPage.class));
-		add(new ResouceBookmarkablePageLink<>("toMinimalFormPage", MinimalFormPage.class));
+		add(new ResouceBookmarkablePageLink<>("toSavingFormPage", SavingFormPage.class));
+		add(new ResouceBookmarkablePageLink<>("toWasteFormPage", SavingFormPage.class));
+		add(new ResouceBookmarkablePageLink<>("toListViewPage", ListViewPage.class));
 		add(new ResouceBookmarkablePageLink<>("toContent01Page", Content01Page.class));
 		add(new ResouceBookmarkablePageLink<>("toContent03Page", BasePage.class));
 
