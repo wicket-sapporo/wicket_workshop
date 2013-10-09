@@ -26,7 +26,7 @@ import org.wicket_sapporo.workshop01.page.WS01IndexPage;
  *
  * @author Hiroto Yamakawa
  */
-public class WorkShop01Application extends WebApplication {
+public class WS01Application extends WebApplication {
 
 	@Override
 	protected void init() {
@@ -37,6 +37,12 @@ public class WorkShop01Application extends WebApplication {
 		getMarkupSettings().setDefaultMarkupEncoding("UTF-8");
 		// IE6/7/8 は JQuery1, それ以外はJQuery2を利用
 		getJavaScriptLibrarySettings().setJQueryReference(new DynamicJQueryResourceReference());
+
+		mountInit();
+	}
+
+	private void mountInit() {
+		//		mount(new MountedMapper("/" + pageClass.getSimpleName(), pageClass, new UrlPathPageParametersEncoder()));
 	}
 
 	@Override

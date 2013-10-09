@@ -27,7 +27,7 @@ import org.wicket_sapporo.workshop01.page.form.bean.FormPageBean;
 
 /**
  * SavingFormPage のコードを CompoundPropertyModel を使わずに Model だけを使って書いたページ.
- * こうした実装でも勿論問題はないが、SavingFormPage に比べれば、コード量は増えている。
+ * こうした実装でももちろん問題はないが、SavingFormPage に比べれば、コード量は増えている。
  *
  * @author Hiroto Yamakawa
  */
