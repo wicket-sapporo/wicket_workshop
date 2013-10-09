@@ -7,6 +7,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
 public class Content03Panel extends Panel {
+	private static final long serialVersionUID = 5527966331413782970L;
 
 	public Content03Panel(String id) {
 		super(id);

@@ -9,6 +9,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.Model;
 
 public class BasePage extends WebPage {
+	private static final long serialVersionUID = -6867115414492462716L;
 
 	Component menu;
 	Component content;

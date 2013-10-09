@@ -5,6 +5,7 @@ import org.wicket_sapporo.workshop01.page.template.replace_pattern.panel.MenuPan
 
 
 public class Content04Page extends BasePage {
+	private static final long serialVersionUID = -1573295950747433878L;
 
 	public Content04Page() {
 		replace(new MenuPanel("menuPanel"));
