@@ -17,9 +17,12 @@
 package org.wicket_sapporo.workshop01;
 
 import org.apache.wicket.Page;
+import org.apache.wicket.core.request.mapper.MountedMapper;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.mapper.parameter.UrlPathPageParametersEncoder;
 import org.apache.wicket.resource.DynamicJQueryResourceReference;
 import org.wicket_sapporo.workshop01.page.WS01IndexPage;
+import org.wicket_sapporo.workshop01.page.CleanUrl.idReceiptPage;
 
 /**
  * Wicketアプリケーションの全体の設定などを記述するクラス.
@@ -42,7 +45,8 @@ public class WS01Application extends WebApplication {
 	}
 
 	private void mountInit() {
-		//		mount(new MountedMapper("/" + pageClass.getSimpleName(), pageClass, new UrlPathPageParametersEncoder()));
+		// クラスへのアクセスをどのURLファイルパスにマッピングするか。第3引数は、パラメータの整形方法の設定.
+		mount(new MountedMapper("/idReceipt", idReceiptPage.class, new UrlPathPageParametersEncoder()));
 	}
 
 	@Override

@@ -19,6 +19,7 @@ package org.wicket_sapporo.workshop01.page;
 import org.apache.wicket.bootstrap.Bootstrap;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
 
 /**
  * テンプレートとなるページクラス.
@@ -29,6 +30,7 @@ public abstract class WS01TemplatePage extends WebPage {
 	private static final long serialVersionUID = 1L;
 
 	public WS01TemplatePage() {
+		this.add(new Label("title", this.getClass().getName()));
 		this.add(homePageLink("toHomePage"));
 	}
 
