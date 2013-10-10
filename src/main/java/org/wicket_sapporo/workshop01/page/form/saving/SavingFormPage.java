@@ -39,8 +39,8 @@ public class SavingFormPage extends WebPage {
 
 		Form<FormPageBean> form = new Form<FormPageBean>("form", new CompoundPropertyModel<>(new FormPageBean())) {
 			private static final long serialVersionUID = 6843470916943201357L;
-			@Override
 
+			@Override
 			protected void onSubmit() {
 				super.onSubmit();
 				// getModelObjectメソッドで、コンポーネントにセットされたModelの中身を取得できます

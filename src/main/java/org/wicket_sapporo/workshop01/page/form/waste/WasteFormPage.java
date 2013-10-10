@@ -50,8 +50,8 @@ public class WasteFormPage extends WebPage {
 		// 各コンポーネントから直接モデルを参照するので、FormにはModelをセットしない
 		Form<Void> form = new Form<Void>("form") {
 			private static final long serialVersionUID = 6843470916943201357L;
-			@Override
 
+			@Override
 			protected void onSubmit() {
 				super.onSubmit();
 				FormPageBean bean = new FormPageBean();
