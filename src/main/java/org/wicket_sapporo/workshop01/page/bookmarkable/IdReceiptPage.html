@@ -5,8 +5,13 @@
 </head>
 <body>
 	<wicket:extend>
-		<p>送信されたパラメータは<span wicket:id="paramater"></span>.</p>
+		<dl>
+		<dt>送信されたパラメータ</dt>
+		<dd>param1 : <span wicket:id="param1"></span></dd>
+		<dd>param2 : <span wicket:id="param2"></span></dd>
+		</dl>
 		<p>このページはブックマーク可能です.</p>
+		<p>URLのマウントやパラメータ形式の設定は WebApplication クラスのサブクラスで行います.</p>
 	</wicket:extend>
 </body>
 </html>

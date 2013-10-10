@@ -22,7 +22,9 @@ import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.mapper.parameter.UrlPathPageParametersEncoder;
 import org.apache.wicket.resource.DynamicJQueryResourceReference;
 import org.wicket_sapporo.workshop01.page.WS01IndexPage;
-import org.wicket_sapporo.workshop01.page.bookmarkable.idReceiptPage;
+import org.wicket_sapporo.workshop01.page.bookmarkable.ArbitraryIdReceiptPage;
+import org.wicket_sapporo.workshop01.page.bookmarkable.IdReceiptPage;
+import org.wicket_sapporo.workshop01.page.bookmarkable.NamedIdReceiptPage;
 
 /**
  * Wicketアプリケーションの全体の設定などを記述するクラス.
@@ -48,8 +50,10 @@ public class WS01Application extends WebApplication {
 	 * ページのURLマッピング情報を設定する
 	 */
 	private void mountPage() {
-		// クラスへのアクセスをどのURLファイルパスにマッピングするか。第3引数は、パラメータの整形方法の設定.
-		mount(new MountedMapper("/idReceipt", idReceiptPage.class, new UrlPathPageParametersEncoder()));
+		// クラスへのアクセスをどのURLファイルパスにマッピングするか。第3引数は、クエリパラメータの整形方法の設定.
+		mount(new MountedMapper("/query_receipt", IdReceiptPage.class));
+		mount(new MountedMapper("/arbitrary_receipt", ArbitraryIdReceiptPage.class, new UrlPathPageParametersEncoder()));
+		mount(new MountedMapper("/named_receipt/${param1}/${param2}", NamedIdReceiptPage.class));
 	}
 
 	@Override
