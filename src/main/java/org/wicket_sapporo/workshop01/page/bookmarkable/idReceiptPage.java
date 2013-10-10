@@ -1,4 +1,4 @@
-package org.wicket_sapporo.workshop01.page.CleanUrl;
+package org.wicket_sapporo.workshop01.page.bookmarkable;
 
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;

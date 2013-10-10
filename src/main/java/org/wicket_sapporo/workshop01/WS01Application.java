@@ -22,7 +22,7 @@ import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.mapper.parameter.UrlPathPageParametersEncoder;
 import org.apache.wicket.resource.DynamicJQueryResourceReference;
 import org.wicket_sapporo.workshop01.page.WS01IndexPage;
-import org.wicket_sapporo.workshop01.page.CleanUrl.idReceiptPage;
+import org.wicket_sapporo.workshop01.page.bookmarkable.idReceiptPage;
 
 /**
  * Wicketアプリケーションの全体の設定などを記述するクラス.
@@ -41,10 +41,13 @@ public class WS01Application extends WebApplication {
 		// IE6/7/8 は JQuery1, それ以外はJQuery2を利用
 		getJavaScriptLibrarySettings().setJQueryReference(new DynamicJQueryResourceReference());
 
-		mountInit();
+		mountPage();
 	}
 
-	private void mountInit() {
+	/**
+	 * ページのURLマッピング情報を設定する
+	 */
+	private void mountPage() {
 		// クラスへのアクセスをどのURLファイルパスにマッピングするか。第3引数は、パラメータの整形方法の設定.
 		mount(new MountedMapper("/idReceipt", idReceiptPage.class, new UrlPathPageParametersEncoder()));
 	}
