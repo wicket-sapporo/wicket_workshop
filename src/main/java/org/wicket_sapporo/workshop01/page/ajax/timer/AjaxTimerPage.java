@@ -21,7 +21,6 @@ import java.util.Date;
 import org.apache.wicket.ajax.AjaxSelfUpdatingTimerBehavior;
 import org.apache.wicket.datetime.PatternDateConverter;
 import org.apache.wicket.datetime.markup.html.basic.DateLabel;
-import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.AbstractReadOnlyModel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.util.time.Duration;
@@ -61,22 +60,6 @@ public class AjaxTimerPage extends WS01TemplatePage {
 				add(new AjaxSelfUpdatingTimerBehavior(Duration.seconds(1)));
 			}
 		});
-
-		IModel<Integer> timerModel = new AbstractReadOnlyModel<Integer>() {
-			private static final long serialVersionUID = 6757430263568909149L;
-			private int timeCount = 0;
-
-			@Override
-			public Integer getObject() {
-				timeCount += 1;
-				return timeCount;
-			}
-		};
-
-		// onInitialize()を使わない場合のBehavior設定方法.
-		Label timer = new Label("timer", timerModel);
-		timer.add(new AjaxSelfUpdatingTimerBehavior(Duration.seconds(1)));
-		add(timer);
 
 	}
 }
