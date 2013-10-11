@@ -17,6 +17,7 @@ import org.wicket_sapporo.workshop01.page.WS01TemplatePage;
 import org.wicket_sapporo.workshop01.page.ajax.lazy.LazyLoadPage;
 import org.wicket_sapporo.workshop01.page.ajax.progress.AjaxProgressPage;
 import org.wicket_sapporo.workshop01.page.ajax.timer.AjaxTimerPage;
+import org.wicket_sapporo.workshop01.page.ajax.updating.FormUpdatingPage;
 
 /**
  * 各Ajaxのデモページへのリンク.
@@ -33,6 +34,7 @@ public class AjaxIndexPage extends WS01TemplatePage {
 		add(new BookmarkablePageLink<Void>("toAjaxTimerPage", AjaxTimerPage.class));
 		add(new BookmarkablePageLink<Void>("toAjaxProgressPage", AjaxProgressPage.class));
 		add(new BookmarkablePageLink<Void>("toLazyLoadPage", LazyLoadPage.class));
+		add(new BookmarkablePageLink<Void>("toFormUpdatingPage", FormUpdatingPage.class));
 	}
 
 }
