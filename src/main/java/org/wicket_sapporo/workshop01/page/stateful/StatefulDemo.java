@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.markup.html.link.StatelessLink;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.wicket_sapporo.workshop01.page.WS01TemplatePage;
@@ -52,7 +53,7 @@ public class StatefulDemo extends WS01TemplatePage {
 		add(new Label("makes", makesModel));
 
 		// 次ページとして、StatefulDemo のインスタンスを作成、引数にはこのページの合計値を渡す
-		add(new Link<Integer>("link", makesModel) {
+		add(new Link<Integer>("statefulLink", makesModel) {
 			private static final long serialVersionUID = -7597194960284804475L;
 
 			@Override

@@ -20,6 +20,7 @@ import org.apache.wicket.Page;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.model.ResourceModel;
+import org.wicket_sapporo.workshop01.page.ajax.AjaxIndexPage;
 import org.wicket_sapporo.workshop01.page.basics.SimplePage;
 import org.wicket_sapporo.workshop01.page.basics.saving.SavingSimplePage;
 import org.wicket_sapporo.workshop01.page.bookmarkable.IdSendPage;
@@ -65,6 +66,7 @@ public class WS01IndexPage extends WS01TemplatePage {
 
 		add(new ResouceBookmarkablePageLink<>("toStatefullDemo", StatefulDemo.class));
 		add(new ResouceBookmarkablePageLink<>("toIdSendPage", IdSendPage.class));
+		add(new ResouceBookmarkablePageLink<>("toAjaxIndexPage", AjaxIndexPage.class));
 
 	}
 
