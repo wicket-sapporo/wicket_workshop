@@ -10,29 +10,33 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package org.wicket_sapporo.workshop01.page.ajax;
+package org.wicket_sapporo.workshop01.page.ajax.lazy;
 
-import org.apache.wicket.markup.html.link.BookmarkablePageLink;
-import org.wicket_sapporo.workshop01.page.WS01TemplatePage;
-import org.wicket_sapporo.workshop01.page.ajax.lazy.LazyLoadPage;
-import org.wicket_sapporo.workshop01.page.ajax.progress.AjaxProgressPage;
-import org.wicket_sapporo.workshop01.page.ajax.timer.AjaxTimerPage;
+import java.util.Date;
+
+import org.apache.wicket.datetime.markup.html.basic.DateLabel;
+import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.model.Model;
 
 /**
- * 各Ajaxのデモページへのリンク.
+ * 現在日時を表示するパネル.
  * 
  * @author Hiroto Yamakawa
  */
-public class AjaxIndexPage extends WS01TemplatePage {
-	private static final long serialVersionUID = -2592415551533703614L;
+public class DatePrintPanel extends Panel {
+	private static final long serialVersionUID = -1739999218876270650L;
 
 	/**
 	 * Construct.
+	 * 
+	 * @param id
+	 *          the Component id.
 	 */
-	public AjaxIndexPage() {
-		add(new BookmarkablePageLink<Void>("toAjaxTimerPage", AjaxTimerPage.class));
-		add(new BookmarkablePageLink<Void>("toAjaxProgressPage", AjaxProgressPage.class));
-		add(new BookmarkablePageLink<Void>("toLazyLoadPage", LazyLoadPage.class));
+	public DatePrintPanel(String id) {
+		super(id);
+
+		add(DateLabel.forDatePattern("date", Model.of(new Date()), "yyyy/MM/dd HH:mm:sss"));
+
 	}
 
 }

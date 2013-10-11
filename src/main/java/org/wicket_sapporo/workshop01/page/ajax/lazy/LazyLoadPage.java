@@ -10,29 +10,43 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package org.wicket_sapporo.workshop01.page.ajax;
+package org.wicket_sapporo.workshop01.page.ajax.lazy;
 
-import org.apache.wicket.markup.html.link.BookmarkablePageLink;
+import org.apache.wicket.Component;
+import org.apache.wicket.extensions.ajax.markup.html.AjaxLazyLoadPanel;
 import org.wicket_sapporo.workshop01.page.WS01TemplatePage;
-import org.wicket_sapporo.workshop01.page.ajax.lazy.LazyLoadPage;
-import org.wicket_sapporo.workshop01.page.ajax.progress.AjaxProgressPage;
-import org.wicket_sapporo.workshop01.page.ajax.timer.AjaxTimerPage;
 
 /**
- * 各Ajaxのデモページへのリンク.
+ * AjaxLazyLoadPanel のサンプルページ.
  * 
- * @author Hiroto Yamakawa
+ * @author CIST yamakawa
+ * 
  */
-public class AjaxIndexPage extends WS01TemplatePage {
-	private static final long serialVersionUID = -2592415551533703614L;
+public class LazyLoadPage extends WS01TemplatePage {
+	private static final long serialVersionUID = -5757272696639481321L;
 
 	/**
 	 * Construct.
 	 */
-	public AjaxIndexPage() {
-		add(new BookmarkablePageLink<Void>("toAjaxTimerPage", AjaxTimerPage.class));
-		add(new BookmarkablePageLink<Void>("toAjaxProgressPage", AjaxProgressPage.class));
-		add(new BookmarkablePageLink<Void>("toLazyLoadPage", LazyLoadPage.class));
+	public LazyLoadPage() {
+
+		add(new AjaxLazyLoadPanel("lazyLoad") {
+			private static final long serialVersionUID = -7947025060292585468L;
+
+			@Override
+			public Component getLazyLoadComponent(String id) {
+
+				// ぐるぐるを表示させるためにわざとSleep.
+				try {
+					Thread.sleep(7000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+
+				// パネルの表示準備が整うまでぐるぐるが表示される
+				return new DatePrintPanel(id);
+			}
+		});
 	}
 
 }
