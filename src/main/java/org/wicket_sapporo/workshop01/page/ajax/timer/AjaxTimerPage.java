@@ -44,7 +44,7 @@ public class AjaxTimerPage extends WS01TemplatePage {
 			}
 		};
 
-		// 日付を整形して表示できる DateLabelを利用（wicket-datetime.jarが必要）
+		// 日付を整形して表示できる DateLabel コンポーネントを利用（wicket-datetime.jarが必要）
 		add(new DateLabel("clock", clockModel, new PatternDateConverter("yyyy/MM/dd HH:mm:ss", true)) {
 			private static final long serialVersionUID = -1197321688780742456L;
 

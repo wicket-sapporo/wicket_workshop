@@ -14,6 +14,7 @@ package org.wicket_sapporo.workshop01.page.ajax.indicating;
 
 import java.util.Date;
 
+import org.apache.wicket.datetime.PatternDateConverter;
 import org.apache.wicket.datetime.markup.html.basic.DateLabel;
 import org.apache.wicket.model.Model;
 import org.wicket_sapporo.workshop01.page.WS01TemplatePage;
@@ -35,7 +36,8 @@ public class DatePrintPage extends WS01TemplatePage {
 			e.printStackTrace();
 		}
 
-		add(DateLabel.forDatePattern("date", Model.of(new Date()), "yyyy/MM/dd HH:mm:ss"));
+		// 日付を整形して表示できる DateLabel コンポーネントを利用（wicket-datetime.jarが必要）
+		add(new DateLabel("date", Model.of(new Date()), new PatternDateConverter("yyyy/MM/dd HH:mm:ss", true)));
 	}
 
 }

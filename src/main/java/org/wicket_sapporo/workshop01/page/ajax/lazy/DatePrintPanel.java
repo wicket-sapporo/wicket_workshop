@@ -14,6 +14,7 @@ package org.wicket_sapporo.workshop01.page.ajax.lazy;
 
 import java.util.Date;
 
+import org.apache.wicket.datetime.PatternDateConverter;
 import org.apache.wicket.datetime.markup.html.basic.DateLabel;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
@@ -42,7 +43,8 @@ public class DatePrintPanel extends Panel {
 			e.printStackTrace();
 		}
 
-		add(DateLabel.forDatePattern("date", Model.of(new Date()), "yyyy/MM/dd HH:mm:ss"));
+		// 日付を整形して表示できる DateLabel コンポーネントを利用（wicket-datetime.jarが必要）
+		add(new DateLabel("date", Model.of(new Date()), new PatternDateConverter("yyyy/MM/dd HH:mm:ss", true)));
 	}
 
 }
