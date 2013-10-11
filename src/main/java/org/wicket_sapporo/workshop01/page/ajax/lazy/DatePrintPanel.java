@@ -19,7 +19,7 @@ import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
 /**
- * 現在日時を表示するパネル.
+ * 現在日時を表示するパネル.ただし、表示時にスレッドスリープを実施する.
  * 
  * @author Hiroto Yamakawa
  */
@@ -35,7 +35,7 @@ public class DatePrintPanel extends Panel {
 	public DatePrintPanel(String id) {
 		super(id);
 
-		// ぐるぐるを表示させるためにわざとSleep.
+		// 呼び出し元にぐるぐるを表示させるためにわざとSleep.
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {

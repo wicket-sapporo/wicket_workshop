@@ -18,12 +18,17 @@ import org.apache.wicket.datetime.markup.html.basic.DateLabel;
 import org.apache.wicket.model.Model;
 import org.wicket_sapporo.workshop01.page.WS01TemplatePage;
 
+/**
+ * 現在日時を表示するページ.ただし、表示時にスレッドスリープを実施する.
+ * 
+ * @author Hiroto Yamakawa
+ */
 public class DatePrintPage extends WS01TemplatePage {
 	private static final long serialVersionUID = 1997029117368049952L;
 
 	public DatePrintPage() {
 
-		// ぐるぐるを表示させるためにわざとSleep.
+		// 呼び出し元にぐるぐるを表示させるためにわざとSleep.
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
