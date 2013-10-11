@@ -29,12 +29,12 @@ public class LazyLoadPage extends WS01TemplatePage {
 	 */
 	public LazyLoadPage() {
 
+		// 本来表示されるパネルの表示準備が整うまで、ぐるぐるを表示するパネル
 		add(new AjaxLazyLoadPanel("lazyLoad") {
 			private static final long serialVersionUID = -7947025060292585468L;
 
 			@Override
 			public Component getLazyLoadComponent(String id) {
-				// パネルの表示準備が整うまでぐるぐるが表示される
 				return new DatePrintPanel(id);
 			}
 		});
