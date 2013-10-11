@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+	<wicket:extend>
+	<p>前のページの値に乱数を足していくプログラム.</p>
+	<p>ブラウザの戻るボタンを押してから「次へ」を押すと, 戻った所の値から再計算します.</p>
+	<p>ページID：<span wicket:id="pageId"></span></p>
+	<p style="font-size:24px"><span wicket:id="preview"></span> + <span wicket:id="addTo"></span> = <span style="color:red" wicket:id="makes"></span></p>
+	<button type="button" wicket:id="link">次へ</button>
+	
+	</wicket:extend>
+</body>
+</html>
