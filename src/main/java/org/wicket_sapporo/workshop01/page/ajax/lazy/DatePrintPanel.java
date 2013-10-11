@@ -35,8 +35,14 @@ public class DatePrintPanel extends Panel {
 	public DatePrintPanel(String id) {
 		super(id);
 
-		add(DateLabel.forDatePattern("date", Model.of(new Date()), "yyyy/MM/dd HH:mm:ss"));
+		// ぐるぐるを表示させるためにわざとSleep.
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
+		add(DateLabel.forDatePattern("date", Model.of(new Date()), "yyyy/MM/dd HH:mm:ss"));
 	}
 
 }

@@ -34,14 +34,6 @@ public class LazyLoadPage extends WS01TemplatePage {
 
 			@Override
 			public Component getLazyLoadComponent(String id) {
-
-				// ぐるぐるを表示させるためにわざとSleep.
-				try {
-					Thread.sleep(7000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-
 				// パネルの表示準備が整うまでぐるぐるが表示される
 				return new DatePrintPanel(id);
 			}
