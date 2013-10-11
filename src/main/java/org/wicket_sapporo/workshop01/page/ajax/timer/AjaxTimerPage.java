@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.wicket_sapporo.workshop01.page.ajax;
+package org.wicket_sapporo.workshop01.page.ajax.timer;
 
 import java.util.Date;
 
