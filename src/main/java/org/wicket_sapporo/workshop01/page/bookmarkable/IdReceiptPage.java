@@ -20,18 +20,19 @@ public class IdReceiptPage extends WS01TemplatePage {
 	 * Construct.
 	 *
 	 * @param pageParameters
-	 *          URLクエリパラメータ.
+	 *          クエリパラメータ.
 	 */
 	public IdReceiptPage(PageParameters pageParameters) {
 		IModel<String> param1Model = Model.of("パラメータが送信されていません");
 		IModel<String> param2Model = Model.of("パラメータが送信されていません");
 		if (pageParameters != null) {
 			// URLクエリパラメータを取得する。toStringメソッドの引数はパラメータの値が無いときの初期値.
+			// BookmaekablePageLinkでアクセスされた場合のURLやパラメータ文字列形式の設定は WebApplication クラスのサブクラスで行います.
 			param1Model.setObject(pageParameters.get("param1").toString("パラメータがありません"));
 			param2Model.setObject(pageParameters.get("param2").toString("パラメータがありません"));
 		}
-		this.add(new Label("param1", param1Model));
-		this.add(new Label("param2", param2Model));
+		add(new Label("param1", param1Model));
+		add(new Label("param2", param2Model));
 	}
 
 }
