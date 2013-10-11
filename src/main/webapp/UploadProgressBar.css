@@ -1,0 +1,22 @@
+/* PROGRESS BAR */
+div.wupb-uploadStatus {
+	margin: 5px;
+	color: #aaa;
+}
+
+div.wupb-progressBar {
+	margin: 5px;
+}
+
+div.wupb-progressBar .wupb-border {
+	background-color: #eee;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	width: 100%;
+}
+
+div.wupb-progressBar .wupb-background {
+	background-color: #507090;
+	height: 18px;
+	width: 0%;
+}

@@ -38,10 +38,15 @@ public class WS01Application extends WebApplication {
 		super.init();
 		// サーバ・クライアント間のリクエスト・レスポンスの文字エンコード
 		getRequestCycleSettings().setResponseRequestEncoding("UTF-8");
+
 		// Wicketに取り込まれるHTMLファイルのエンコード
 		getMarkupSettings().setDefaultMarkupEncoding("UTF-8");
+
 		// IE6/7/8 は JQuery1, それ以外はJQuery2を利用
 		getJavaScriptLibrarySettings().setJQueryReference(new DynamicJQueryResourceReference());
+
+		// AjaxProgressPageの様に、UploadProgressを利用するときの設定項目.
+		getApplicationSettings().setUploadProgressUpdatesEnabled(true);
 
 		mountPage();
 	}
