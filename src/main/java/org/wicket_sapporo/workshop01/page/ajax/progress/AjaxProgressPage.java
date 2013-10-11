@@ -22,6 +22,13 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.util.lang.Bytes;
 import org.wicket_sapporo.workshop01.page.WS01TemplatePage;
 
+/**
+ * ファイルアップロードの状況をAjaxのプログレスバーで表示するサンプル.<br>
+ * ただしローカル環境だと速度が出すぎてあまりよくわからない.
+ * 
+ * @author Hiroto Yamakawa
+ * 
+ */
 public class AjaxProgressPage extends WS01TemplatePage {
 	private static final long serialVersionUID = 1342054110780482192L;
 

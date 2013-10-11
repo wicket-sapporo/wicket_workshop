@@ -17,10 +17,9 @@ import org.apache.wicket.extensions.ajax.markup.html.AjaxLazyLoadPanel;
 import org.wicket_sapporo.workshop01.page.WS01TemplatePage;
 
 /**
- * AjaxLazyLoadPanel のサンプルページ.
+ * 画面表示後にパネルの準備ができるまでぐるぐるを表示する AjaxLazyLoadPanel のサンプル.
  * 
- * @author CIST yamakawa
- * 
+ * @author Hiroto Yamakawa
  */
 public class LazyLoadPage extends WS01TemplatePage {
 	private static final long serialVersionUID = -5757272696639481321L;
