@@ -5,15 +5,15 @@
 </head>
 <body>
 	<wicket:extend>
-
-		<p>ユーザIDとパスフレーズに同じ値を入れるとサインインできます.</p>
-		<form wicket:id="form">
+	
+	<p>ユーザIDとパスフレーズに同じ値を入れるとサインインできます.</p>
+	<form wicket:id="form">
 		<div wicket:id="feedback"></div>
 		<label>ユーザID : </label><input type="text" wicket:id="userId">
 		<label>パスフレーズ : </label><input type="password" wicket:id="passphrase">
 		<br><button type="submit">サインイン</button>
 	</form>
-	
+
 	</wicket:extend>
 </body>
 </html>

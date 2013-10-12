@@ -42,7 +42,7 @@ public class SimpleSignInPage extends WS01TemplatePage {
 		// 自分のページのフィールド変数とコンポーネントを関連づける様に CompoundPropertyModel を用意.
 		IModel<SimpleSignInPage> formModel = new CompoundPropertyModel<>(this);
 
-		// ログイン・ログアウトなどのセッションに依存したくない場合は Stateless コンポーネントを利用.
+		// ログイン・ログアウトなどのステートフルにしたくない部分には Stateless コンポーネントを利用.
 		StatelessForm<SimpleSignInPage> form = new StatelessForm<SimpleSignInPage>("form", formModel) {
 			private static final long serialVersionUID = -4915291457682594278L;
 
