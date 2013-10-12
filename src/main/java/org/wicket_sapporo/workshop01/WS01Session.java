@@ -26,6 +26,7 @@ public class WS01Session extends WebSession {
 
 	// 認証状況
 	private boolean signed;
+	private String userId;
 
 	/**
 	 * Construct.
@@ -55,9 +56,10 @@ public class WS01Session extends WebSession {
 		// 認証処理の体で
 		if (userId != null && passphrase != null) {
 			if (userId.equals(passphrase)) {
+				// Session Fixation対策
 				replaceSession();
-				setAttribute("userId", userId);
-				signed = true;
+				this.userId = userId;
+				this.signed = true;
 			}
 		}
 		return signed;
@@ -83,7 +85,6 @@ public class WS01Session extends WebSession {
 	 * @return signed userId;
 	 */
 	public String getUserId() {
-		Object obj = getAttribute("userId");
-		return (obj != null) ? obj.toString() : "不明";
+		return userId;
 	}
 }
