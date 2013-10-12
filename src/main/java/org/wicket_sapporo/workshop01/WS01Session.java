@@ -37,6 +37,7 @@ public class WS01Session extends WebSession {
 	public WS01Session(Request request) {
 		super(request);
 		signed = false;
+		userId = null;
 	}
 
 	public static WS01Session get() {
@@ -70,7 +71,7 @@ public class WS01Session extends WebSession {
 	 */
 	public void signOut() {
 		signed = false;
-		removeAttribute("userId");
+		userId = null;
 		invalidate();
 	}
 
@@ -85,6 +86,6 @@ public class WS01Session extends WebSession {
 	 * @return signed userId;
 	 */
 	public String getUserId() {
-		return userId;
+		return userId != null ? userId : "不明";
 	}
 }
