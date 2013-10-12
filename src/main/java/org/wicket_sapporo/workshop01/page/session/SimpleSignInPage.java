@@ -39,7 +39,7 @@ public class SimpleSignInPage extends WS01TemplatePage {
 	 */
 	public SimpleSignInPage() {
 
-		// 自分のページのフィールド変数とコンポーネントを関連づける様に CompoundPropertyModel を用意
+		// 自分のページのフィールド変数とコンポーネントを関連づける様に CompoundPropertyModel を用意.
 		IModel<SimpleSignInPage> formModel = new CompoundPropertyModel<>(this);
 
 		// ログイン・ログアウトなどのセッションに依存したくない場合は Stateless コンポーネントを利用.
