@@ -25,13 +25,13 @@ import org.wicket_sapporo.workshop01.page.WS01TemplatePage;
  *
  * @author Hiroto Yamakawa
  */
-public class StatefulDemo extends WS01TemplatePage {
+public class StatefulLinkPage extends WS01TemplatePage {
 	private static final long serialVersionUID = -4026528656562498981L;
 
 	/**
 	 * Construct.
 	 */
-	public StatefulDemo() {
+	public StatefulLinkPage() {
 		this(Model.of(0));
 	}
 
@@ -41,7 +41,7 @@ public class StatefulDemo extends WS01TemplatePage {
 	 * @param previewModel
 	 *          前のページの合計値を持ったModel
 	 */
-	public StatefulDemo(IModel<Integer> previewModel) {
+	public StatefulLinkPage(IModel<Integer> previewModel) {
 
 		// ページIDを取得して表示
 		add(new Label("pageId", Model.of(getPageId())));
@@ -70,7 +70,7 @@ public class StatefulDemo extends WS01TemplatePage {
 			@Override
 			public void onClick() {
 				// コンポーネントに渡されたモデルは、コンポーネント内部で getModel() メソッドで呼び出せる
-				setResponsePage(new StatefulDemo(getModel()));
+				setResponsePage(new StatefulLinkPage(getModel()));
 			}
 		});
 

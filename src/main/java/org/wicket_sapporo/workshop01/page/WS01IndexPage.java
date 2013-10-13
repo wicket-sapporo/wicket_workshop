@@ -30,7 +30,7 @@ import org.wicket_sapporo.workshop01.page.form.validation.ValidationFormPage;
 import org.wicket_sapporo.workshop01.page.form.waste.WasteFormPage;
 import org.wicket_sapporo.workshop01.page.listView.ListViewPage;
 import org.wicket_sapporo.workshop01.page.session.SimpleSignInPage;
-import org.wicket_sapporo.workshop01.page.stateful.StatefulDemo;
+import org.wicket_sapporo.workshop01.page.stateful.StatefulLinkPage;
 import org.wicket_sapporo.workshop01.page.template.childtag_pattern.Content01Page;
 import org.wicket_sapporo.workshop01.page.template.replace_pattern.Content03Page;
 
@@ -65,7 +65,7 @@ public class WS01IndexPage extends WS01TemplatePage {
 		add(new ResouceBookmarkablePageLink<>("toContent01Page", Content01Page.class));
 		add(new ResouceBookmarkablePageLink<>("toContent03Page", Content03Page.class));
 
-		add(new ResouceBookmarkablePageLink<>("toStatefullDemo", StatefulDemo.class));
+		add(new ResouceBookmarkablePageLink<>("toStatefulLinkPage", StatefulLinkPage.class));
 		add(new ResouceBookmarkablePageLink<>("toIdSendPage", IdSendPage.class));
 		add(new ResouceBookmarkablePageLink<>("toAjaxIndexPage", AjaxIndexPage.class));
 		add(new ResouceBookmarkablePageLink<>("toSignInPage", SimpleSignInPage.class));
