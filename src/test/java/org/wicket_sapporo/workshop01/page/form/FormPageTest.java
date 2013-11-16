@@ -34,6 +34,8 @@ public class FormPageTest {
 		tester.startPage(new FormPage());
 		FormTester formTester = tester.newFormTester("form", false);
 		formTester.setValue("name", "foo");
+		formTester.setValue("age", "1");
+		formTester.setValue("introduction", "bar");
 		formTester.submit();
 		tester.assertRenderedPage(FormConfirmationPage.class);
 	}
