@@ -37,8 +37,8 @@ public class WS01IndexPageTest {
 	@Before
 	public void setUp() {
 		tester = new WicketTester(new WS01Application());
-		// Localeを日本語に設定（
 		WS01Session session = (WS01Session) tester.getSession();
+		// SessionにLocale（日本語）を設定
 		session.setLocale(Locale.JAPANESE);
 	}
 
@@ -72,6 +72,7 @@ public class WS01IndexPageTest {
 		// テストとページの表示のスタート
 		tester.startPage(new WS01IndexPage());
 		WS01Session session = (WS01Session) tester.getSession();
+		// SessionのLocaleを英語に再設定
 		session.setLocale(Locale.US);
 		tester.assertRenderedPage(WS01IndexPage.class);
 		tester.assertLabel("helloMessage", "Hello! These pages have been displayed using Wicket!");

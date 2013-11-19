@@ -19,6 +19,8 @@ package org.wicket_sapporo.workshop01;
 import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebSession;
 import org.apache.wicket.request.Request;
+import org.wicket_sapporo.workshop01.service.AuthService;
+import org.wicket_sapporo.workshop01.service.IAuthService;
 
 /**
  * システム独自のWebSession.
@@ -27,6 +29,9 @@ import org.apache.wicket.request.Request;
  */
 public class WS01Session extends WebSession {
 	private static final long serialVersionUID = 8188342108532514097L;
+
+	// 認証サービス
+	private IAuthService authService;
 
 	// 認証状況
 	private boolean signed;
@@ -40,6 +45,7 @@ public class WS01Session extends WebSession {
 	 */
 	public WS01Session(Request request) {
 		super(request);
+		authService = null;
 		signed = false;
 		userId = null;
 	}
@@ -58,9 +64,13 @@ public class WS01Session extends WebSession {
 	 * @return 認証に成功すれば<code>true</code>, それ以外は<code>false</code>
 	 */
 	public boolean signIn(String userId, String passphrase) {
+		if (authService == null) {
+			// 本来であればDIコンテナなどでInjectionすると便利.
+			authService = new AuthService();
+		}
 		// 認証処理の体で
 		if (userId != null && passphrase != null) {
-			if (userId.equals(passphrase)) {
+			if (authService.certify(userId, passphrase)) {
 				// Session Fixation対策
 				replaceSession();
 				this.userId = userId;
@@ -92,4 +102,5 @@ public class WS01Session extends WebSession {
 	public String getUserId() {
 		return userId != null ? userId : "不明";
 	}
+
 }
