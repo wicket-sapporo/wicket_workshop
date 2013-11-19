@@ -16,15 +16,17 @@
  */
 package org.wicket_sapporo.workshop01.page.form;
 
-import java.util.Locale;
-
 import org.apache.wicket.util.tester.FormTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
 import org.wicket_sapporo.workshop01.WS01Application;
-import org.wicket_sapporo.workshop01.WS01Session;
 
+/**
+ * FormPage のテストクラス（FormTester のサンプル）
+ *
+ * @author Hiroto Yamakawa
+ */
 public class FormPageTest {
 
 	private WicketTester tester;
@@ -32,8 +34,6 @@ public class FormPageTest {
 	@Before
 	public void setUp() {
 		tester = new WicketTester(new WS01Application());
-		WS01Session session = (WS01Session) tester.getSession();
-		session.setLocale(Locale.JAPANESE);
 	}
 
 	@Test
@@ -54,7 +54,6 @@ public class FormPageTest {
 		formTester.setValue("introduction", "bar");
 		formTester.submit();
 		tester.assertRenderedPage(FormConfirmationPage.class);
-		FormConfirmationPage page = (FormConfirmationPage)tester.getLastRenderedPage();
 	}
 
 }

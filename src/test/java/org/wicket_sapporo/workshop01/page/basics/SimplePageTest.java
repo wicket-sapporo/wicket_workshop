@@ -14,19 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.wicket_sapporo.workshop01.page.ajax.link;
+package org.wicket_sapporo.workshop01.page.basics;
 
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
+
+import org.apache.wicket.util.tester.TagTester;
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
 import org.wicket_sapporo.workshop01.WS01Application;
 
 /**
- * VisibleChangePage のテストクラス（clickLink, assertComponentOnAjaxResponse, assertVisibleのサンプル）
+ * SimplePage のテストクラス（TagTesterのサンプル）
  *
- * @author Hiroto Yamakawa
+ * @author Hiroto yamakawa
  */
-public class VisibleChangePageTest {
+public class SimplePageTest {
 
 	private WicketTester tester;
 
@@ -36,18 +40,10 @@ public class VisibleChangePageTest {
 	}
 
 	@Test
-	public void 初期状態でページが表示される() {
-		tester.startPage(new VisibleChangePage());
-		tester.assertRenderedPage(VisibleChangePage.class);
-		tester.assertInvisible("green");
-	}
-
-	@Test
-	public void link押下でgreenが表示される() {
-		tester.startPage(new VisibleChangePage());
-		tester.clickLink("link");
-		tester.assertComponentOnAjaxResponse("green");
-		tester.assertVisible("green");
+	public void label4のstyleが変更される() {
+		tester.startPage(new SimplePage());
+		TagTester tagTester = tester.getTagByWicketId("label4");
+		assertThat(tagTester.getAttribute("style"), is("color:#090"));
 	}
 
 }

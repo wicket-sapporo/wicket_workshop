@@ -22,7 +22,7 @@ import org.junit.Test;
 import org.wicket_sapporo.workshop01.WS01Application;
 
 /**
- * ArbitraryIdReceiptPage のJUnitテスト
+ * ArbitraryIdReceiptPage のテストクラス（executeUrlのサンプル）
  *
  * @author Hiroto Yamakawa
  */

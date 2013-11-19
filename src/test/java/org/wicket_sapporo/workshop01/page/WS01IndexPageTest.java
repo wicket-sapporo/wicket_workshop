@@ -27,7 +27,7 @@ import org.wicket_sapporo.workshop01.page.basics.SimplePage;
 import org.wicket_sapporo.workshop01.page.form.FormPage;
 
 /**
- * WS01IndexPageのテストクラス
+ * WS01IndexPageのテストクラス（getSession, setLocale, assertLabelのサンプル）
  *
  * @author Hiroto Yamakawa
  */

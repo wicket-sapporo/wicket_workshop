@@ -23,7 +23,7 @@ import org.junit.Test;
 import org.wicket_sapporo.workshop01.WS01Application;
 
 /**
- * Content03Panel のテストクラス
+ * Content03Panel のテストクラス（startComponentInPagのサンプル）
  *
  * @author Hiroto Yamakawa
  */

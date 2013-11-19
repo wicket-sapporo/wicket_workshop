@@ -22,6 +22,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.wicket_sapporo.workshop01.WS01Application;
 
+/**
+ * AjaxTimerPage のテストクラス（executeAllTimerBehaviors, assertComponentOnAjaxResponseのサンプル）
+ *
+ * @author Hiroto Yamakawa
+ */
 public class AjaxTimerPageTest {
 
 	private WicketTester tester;
