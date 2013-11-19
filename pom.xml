@@ -35,6 +35,7 @@
 		<wicket-bootstrap.version>0.14</wicket-bootstrap.version>
 		<jetty.version>9.0.6.v20130930</jetty.version>
 		<mockito.version>1.9.5</mockito.version>
+		<guice.version>3.0</guice.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 

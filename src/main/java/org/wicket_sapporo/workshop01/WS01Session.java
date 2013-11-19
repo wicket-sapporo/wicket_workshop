@@ -1,13 +1,11 @@
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
+ * contributor license agreements. See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
  * The ASF licenses this file to You under the Apache License, Version 2.0
  * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * the License. You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -19,8 +17,7 @@ package org.wicket_sapporo.workshop01;
 import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebSession;
 import org.apache.wicket.request.Request;
-import org.wicket_sapporo.workshop01.service.AuthService;
-import org.wicket_sapporo.workshop01.service.IAuthService;
+import org.apache.wicket.util.lang.Args;
 
 /**
  * システム独自のWebSession.
@@ -29,9 +26,6 @@ import org.wicket_sapporo.workshop01.service.IAuthService;
  */
 public class WS01Session extends WebSession {
 	private static final long serialVersionUID = 8188342108532514097L;
-
-	// 認証サービス
-	private IAuthService authService;
 
 	// 認証状況
 	private boolean signed;
@@ -45,7 +39,6 @@ public class WS01Session extends WebSession {
 	 */
 	public WS01Session(Request request) {
 		super(request);
-		authService = null;
 		signed = false;
 		userId = null;
 	}
@@ -55,29 +48,19 @@ public class WS01Session extends WebSession {
 	}
 
 	/**
-	 * 認証処理
+	 * 認証完了処理。フィールド変数に引数の値を格納.
 	 *
 	 * @param userId
 	 *          ユーザid
 	 * @param passphrase
 	 *          パスフレーズ
-	 * @return 認証に成功すれば<code>true</code>, それ以外は<code>false</code>
 	 */
-	public boolean signIn(String userId, String passphrase) {
-		if (authService == null) {
-			// 本来であればDIコンテナなどでInjectionすると便利.
-			authService = new AuthService();
-		}
-		// 認証処理の体で
-		if (userId != null && passphrase != null) {
-			if (authService.certify(userId, passphrase)) {
-				// Session Fixation対策
-				replaceSession();
-				this.userId = userId;
-				this.signed = true;
-			}
-		}
-		return signed;
+	public void signIn(String userId, String passphrase) {
+		Args.notNull(userId, "userId");
+		Args.notNull(passphrase, "passphrase");
+		replaceSession();
+		this.userId = userId;
+		this.signed = true;
 	}
 
 	/**

@@ -1,13 +1,11 @@
 /*
  * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
+ * contributor license agreements. See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
  * The ASF licenses this file to You under the Apache License, Version 2.0
  * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * the License. You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -25,15 +23,19 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.wicket_sapporo.workshop01.WS01Session;
 import org.wicket_sapporo.workshop01.page.WS01TemplatePage;
+import org.wicket_sapporo.workshop01.service.AuthService;
+import org.wicket_sapporo.workshop01.service.IAuthService;
 
 /**
  * サインイン画面の体で.
  *
  * @author Hiroto Yamakawa
- *
  */
 public class SimpleSignInPage extends WS01TemplatePage {
 	private static final long serialVersionUID = -8371810037545557093L;
+
+	// 認証サービスの体で
+	private IAuthService authService;
 
 	private String userId;
 	private String passphrase;
@@ -42,6 +44,24 @@ public class SimpleSignInPage extends WS01TemplatePage {
 	 * Construct.
 	 */
 	public SimpleSignInPage() {
+		this(new AuthService());
+	}
+
+	/**
+	 * Construct.
+	 * フィールド変数を参照する無名クラスなどが含まれるページを
+	 * 正常にユニットテストするには、インスタンス時にフィールド変数が
+	 * 初期化されている必要がある（後からMockなどで上書きできない）.
+	 * このためやむなく引数付きコンストラクタを作成している.
+	 * DIコンテナなどを利用すれば、よりスマートなコードにできる.
+	 *
+	 * @param the
+	 *          {@link IAuthService}.
+	 */
+	public SimpleSignInPage(IAuthService service) {
+		authService = service;
+		userId = "";
+		passphrase = "";
 
 		// 自分のページのフィールド変数とコンポーネントを関連づける様に CompoundPropertyModel を用意.
 		IModel<SimpleSignInPage> formModel = new CompoundPropertyModel<>(this);
@@ -53,7 +73,8 @@ public class SimpleSignInPage extends WS01TemplatePage {
 			@Override
 			protected void onSubmit() {
 				super.onSubmit();
-				if (WS01Session.get().signIn(userId, passphrase)) {
+				if (authService.certify(userId, passphrase)) {
+					WS01Session.get().signIn(userId, passphrase);
 					setResponsePage(SignedPage.class);
 				}
 				// 失敗したら FeedBackPanel がエラーメッセージを表示する様に、メッセージをセット.
@@ -84,6 +105,6 @@ public class SimpleSignInPage extends WS01TemplatePage {
 				setLabel(Model.of("パスフレーズ"));
 			}
 		});
-
 	}
+
 }
