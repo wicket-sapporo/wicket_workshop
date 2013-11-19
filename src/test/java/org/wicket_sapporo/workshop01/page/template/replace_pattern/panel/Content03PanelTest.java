@@ -14,30 +14,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.wicket_sapporo.workshop01.page.ajax.indicating;
+package org.wicket_sapporo.workshop01.page.template.replace_pattern.panel;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.extensions.ajax.markup.html.IndicatingAjaxLink;
-import org.wicket_sapporo.workshop01.page.WS01TemplatePage;
+import org.apache.wicket.util.tester.WicketTester;
+import org.joda.time.DateTime;
+import org.junit.Before;
+import org.junit.Test;
+import org.wicket_sapporo.workshop01.WS01Application;
 
-public class IndicatingPage extends WS01TemplatePage {
-	private static final long serialVersionUID = -135929342451274729L;
+/**
+ * Content03Panel のテストクラス
+ *
+ * @author Hiroto Yamakawa
+ */
+public class Content03PanelTest {
 
-	/**
-	 * Construct.
-	 */
-	public IndicatingPage() {
+	private WicketTester tester;
 
-		// ページの表示準備が整うまでぐるぐるを表示するLink
-		add(new IndicatingAjaxLink<Void>("indicatingLink") {
-			private static final long serialVersionUID = -4531535141738684261L;
+	@Before
+	public void setUp() {
+		tester = new WicketTester(new WS01Application());
+	}
 
-			@Override
-			public void onClick(AjaxRequestTarget target) {
-				setResponsePage(new DatePrintPage());
-			}
-		});
-
+	@Test
+	public void dateLabelが正しく表示される() {
+		tester.startComponentInPage(new Content03Panel("foo"));
+		tester.assertLabel("foo:dateLabel", DateTime.now().toString("yyyy-MM-dd"));
 	}
 
 }

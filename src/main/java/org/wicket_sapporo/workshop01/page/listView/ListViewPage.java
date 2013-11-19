@@ -1,14 +1,18 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements. See the NOTICE
- * file distributed with this work for additional information regarding copyright ownership. The ASF licenses this file
- * to You under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * 
- * http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
- * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
- * specific language governing permissions and limitations under the License.
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package org.wicket_sapporo.workshop01.page.listView;
 
@@ -45,7 +49,6 @@ public class ListViewPage extends WebPage {
 			}
 		};
 		add(cityNameListView);
-
 
 		IModel<List<SiteBean>> siteListModel = new ListModel<>(getSiteBeanList());
 
@@ -84,7 +87,7 @@ public class ListViewPage extends WebPage {
 	/**
 	 * @return 表示する市の名前のリスト.
 	 */
-	public List<String> getCityNameList() { 
+	public List<String> getCityNameList() {
 		List<String> list = new ArrayList<>(3);
 		list.add("札幌市");
 		list.add("千歳市");
@@ -95,7 +98,7 @@ public class ListViewPage extends WebPage {
 	/**
 	 * @return 表示するリンク先を表す SiteBean のリスト.
 	 */
-	public List<SiteBean> getSiteBeanList() { 
+	public List<SiteBean> getSiteBeanList() {
 		List<SiteBean> list = new ArrayList<>(3);
 		list.add(new SiteBean("Google", "http://google.co.jp/"));
 		list.add(new SiteBean("Wicket-Sapporo", "http://wicket-sapporo.org/"));
