@@ -38,7 +38,7 @@ public class GuiceApplication extends WebApplication {
 		getJavaScriptLibrarySettings().setJQueryReference(new DynamicJQueryResourceReference());
 		// MountedMapper
 		mount(new MountedMapper("/guice_signin", GuiceSignInPage.class));
-		mount(new MountedMapper("/guice_Signed", GuiceSignedPage.class));
+		mount(new MountedMapper("/guice_signed", GuiceSignedPage.class));
 		// GoogleGuiceのInjectorの初期化
 		initGuice();
 	}
