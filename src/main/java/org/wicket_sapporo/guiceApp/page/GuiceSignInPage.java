@@ -36,7 +36,7 @@ public class GuiceSignInPage extends GuiceAppTemplatePage {
 
 	// 認証サービスの体で。GuiceによりDIされる。
 	@Inject
-	private IGuiceAuthService authService;
+	private IGuiceAuthService guiceAuthService;
 
 	private String userId;
 	private String passphrase;
@@ -58,7 +58,7 @@ public class GuiceSignInPage extends GuiceAppTemplatePage {
 			@Override
 			protected void onSubmit() {
 				super.onSubmit();
-				if (authService.certify(userId, passphrase)) {
+				if (guiceAuthService.certify(userId, passphrase)) {
 					GuiceAppSession.get().signIn(userId, passphrase);
 					setResponsePage(GuiceSignedPage.class);
 				}
