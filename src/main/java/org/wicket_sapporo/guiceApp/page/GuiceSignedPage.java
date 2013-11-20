@@ -25,7 +25,7 @@ import org.wicket_sapporo.guiceApp.GuiceAppSession;
  * @author Hiroto Yamakawa
  */
 public class GuiceSignedPage extends GuiceAppTemplatePage {
-	private static final long serialVersionUID = -923500942731691847L;
+	private static final long serialVersionUID = 1770952927618796954L;
 
 	/**
 	 * Construct.

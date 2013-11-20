@@ -11,7 +11,7 @@ import org.apache.wicket.util.lang.Args;
  * @author CIST yamakawa
  */
 public class GuiceAppSession extends WebSession {
-	private static final long serialVersionUID = -3204779817805409361L;
+	private static final long serialVersionUID = -6439846268456520174L;
 
 	private boolean signed;
 	private String userId;

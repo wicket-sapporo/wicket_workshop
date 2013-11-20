@@ -32,7 +32,7 @@ import com.google.inject.Inject;
  * @author Hiroto Yamakawa
  */
 public class GuiceSignInPage extends GuiceAppTemplatePage {
-	private static final long serialVersionUID = -8371810037545557093L;
+	private static final long serialVersionUID = -1368746343101480225L;
 
 	// 認証サービスの体で。GuiceによりDIされる。
 	@Inject
