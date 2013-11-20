@@ -10,7 +10,7 @@ import org.apache.wicket.util.lang.Args;
  *
  * @author CIST yamakawa
  */
-public class GuiceSession extends WebSession {
+public class GuiceAppSession extends WebSession {
 	private static final long serialVersionUID = -3204779817805409361L;
 
 	private boolean signed;
@@ -22,17 +22,17 @@ public class GuiceSession extends WebSession {
 	 * @param request
 	 *          {@link Request}.
 	 */
-	public GuiceSession(Request request) {
+	public GuiceAppSession(Request request) {
 		super(request);
 	}
 
 	/**
 	 * Session取得用のメソッド.
 	 *
-	 * @return {@link GuiceSession}
+	 * @return {@link GuiceAppSession}
 	 */
-	public static GuiceSession get() {
-		return (GuiceSession) Session.get();
+	public static GuiceAppSession get() {
+		return (GuiceAppSession) Session.get();
 	}
 
 	/**

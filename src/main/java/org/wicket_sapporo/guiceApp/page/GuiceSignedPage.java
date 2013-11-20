@@ -17,7 +17,7 @@ package org.wicket_sapporo.guiceApp.page;
 import org.apache.wicket.RestartResponseException;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.StatelessLink;
-import org.wicket_sapporo.guiceApp.GuiceSession;
+import org.wicket_sapporo.guiceApp.GuiceAppSession;
 
 /**
  * 認証後のページの体で
@@ -32,7 +32,7 @@ public class GuiceSignedPage extends GuiceAppTemplatePage {
 	 */
 	public GuiceSignedPage() {
 
-		this.add(new Label("userId", GuiceSession.get().getUserId()));
+		this.add(new Label("userId", GuiceAppSession.get().getUserId()));
 
 		// ログイン・ログアウトなどのステートフルにしたくない部分には Stateless コンポーネントを利用する.
 		this.add(new StatelessLink<Void>("signOut") {
@@ -40,7 +40,7 @@ public class GuiceSignedPage extends GuiceAppTemplatePage {
 
 			@Override
 			public void onClick() {
-				GuiceSession.get().signOut();
+				GuiceAppSession.get().signOut();
 				// サインアウトしたら強制的にログイン画面へ.
 				throw new RestartResponseException(GuiceSignInPage.class);
 			}
@@ -50,7 +50,7 @@ public class GuiceSignedPage extends GuiceAppTemplatePage {
 	@Override
 	protected void onInitialize() {
 		super.onInitialize();
-		if (!GuiceSession.get().isSigned()) {
+		if (!GuiceAppSession.get().isSigned()) {
 			// ページの生成時にサインインしてない場合は強制的にログイン画面へ.
 			throw new RestartResponseException(GuiceSignInPage.class);
 		}

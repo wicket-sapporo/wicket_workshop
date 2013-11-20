@@ -53,6 +53,6 @@ public class GuiceApplication extends WebApplication {
 	@Override
 	public Session newSession(Request request, Response response) {
 		// 独自に拡張したSessionの利用
-		return new GuiceSession(request);
+		return new GuiceAppSession(request);
 	}
 }

@@ -11,7 +11,7 @@ import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
 import org.wicket_sapporo.guiceApp.GuiceApplication;
-import org.wicket_sapporo.guiceApp.GuiceSession;
+import org.wicket_sapporo.guiceApp.GuiceAppSession;
 import org.wicket_sapporo.guiceApp.service.IGuiceAuthService;
 
 import com.google.inject.Binder;
@@ -63,7 +63,7 @@ public class GuiceSignInPageTest {
 		formTester.submit();
 
 		// Sessionオブジェクトを呼び出す
-		GuiceSession session = (GuiceSession) tester.getSession();
+		GuiceAppSession session = (GuiceAppSession) tester.getSession();
 		assertThat(session.isSigned(), is(true));
 		tester.assertRenderedPage(GuiceSignedPage.class);
 	}

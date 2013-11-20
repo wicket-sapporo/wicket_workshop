@@ -21,7 +21,7 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
-import org.wicket_sapporo.guiceApp.GuiceSession;
+import org.wicket_sapporo.guiceApp.GuiceAppSession;
 import org.wicket_sapporo.guiceApp.service.IGuiceAuthService;
 
 import com.google.inject.Inject;
@@ -59,7 +59,7 @@ public class GuiceSignInPage extends GuiceAppTemplatePage {
 			protected void onSubmit() {
 				super.onSubmit();
 				if (authService.certify(userId, passphrase)) {
-					GuiceSession.get().signIn(userId, passphrase);
+					GuiceAppSession.get().signIn(userId, passphrase);
 					setResponsePage(GuiceSignedPage.class);
 				}
 				// 失敗したら FeedBackPanel がエラーメッセージを表示する様に、メッセージをセット.
