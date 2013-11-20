@@ -36,6 +36,7 @@
 		<jetty.version>9.0.6.v20130930</jetty.version>
 		<mockito.version>1.9.5</mockito.version>
 		<guice.version>3.0</guice.version>
+		<sping.version>3.2.5.RELEASE</sping.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -135,7 +136,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>3.2.5.RELEASE</version>
+			<version>${sping.version}</version>
 		</dependency>
 
 		<!-- JETTY DEPENDENCIES FOR TESTING -->

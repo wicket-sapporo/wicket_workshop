@@ -8,6 +8,7 @@ import static org.mockito.Mockito.*;
 import org.apache.wicket.guice.GuiceComponentInjector;
 import org.apache.wicket.util.tester.FormTester;
 import org.apache.wicket.util.tester.WicketTester;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.wicket_sapporo.guiceApp.GuiceAppSession;
@@ -75,5 +76,10 @@ public class GuiceSignInPageTest {
 		formTester.submit();
 		tester.assertFeedback("form:feedback", "サインイン失敗.");
 		tester.assertRenderedPage(GuiceSignInPage.class);
+	}
+
+	@After
+	public void tearDown() {
+		tester.destroy();
 	}
 }
