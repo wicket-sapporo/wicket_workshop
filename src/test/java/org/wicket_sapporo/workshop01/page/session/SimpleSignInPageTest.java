@@ -31,7 +31,6 @@ public class SimpleSignInPageTest {
 		// ただし、certify メソッドに"abcd", 1234 が来たときは、trueを返す（認証成功の体で）
 		when(mAuthService.certify("abcd", "1234")).thenReturn(true);
 		// sessionのフィールドのauthService変数にmAuthServiceが代入される
-		// setInternalState(session, "authService", authService);
 	}
 
 	@Test

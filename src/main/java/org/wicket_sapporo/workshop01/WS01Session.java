@@ -18,6 +18,7 @@ import org.apache.wicket.Session;
 import org.apache.wicket.protocol.http.WebSession;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.util.lang.Args;
+import org.wicket_sapporo.guiceApp.GuiceSession;
 
 /**
  * システム独自のWebSession.
@@ -43,6 +44,11 @@ public class WS01Session extends WebSession {
 		userId = null;
 	}
 
+	/**
+	 * Session取得用のメソッド.
+	 *
+	 * @return {@link GuiceSession}
+	 */
 	public static WS01Session get() {
 		return (WS01Session) Session.get();
 	}
