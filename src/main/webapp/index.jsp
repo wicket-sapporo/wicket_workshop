@@ -7,7 +7,7 @@
 <body>
 
 <p>このページはJSPを使って表示されています。</p>
-<a href="./ws01/">WorkShop01</a>
-
+<p><a href="./ws01/">基本的なWicketアプリケーション</a></p>
+<p><a href="./guiceApp/">GoogleGuiceと連係したWicketアプリケーション</a></p>
 </body>
 </html>
