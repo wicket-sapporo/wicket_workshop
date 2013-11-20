@@ -66,7 +66,7 @@ public class SpringApplication extends WebApplication {
 	protected void initSpring() {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
 		// アノテーション付きのBeanを下のパッケージから検索する
-		ctx.scan("org.wicket_sapporo.springApp");
+		ctx.scan("org.wicket_sapporo.springApp.service");
 		ctx.refresh();
 		getComponentInstantiationListeners().add(new SpringComponentInjector(this, ctx));
 	}

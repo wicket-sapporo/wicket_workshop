@@ -63,6 +63,7 @@ public class GuiceApplication extends WebApplication {
 	 * GoogleGuice用のInjectorを用意する.
 	 */
 	protected void initGuice() {
+		// Wicketから呼び出されたクラスのインジェクションを実行する
 		getComponentInstantiationListeners().add(new GuiceComponentInjector(this));
 	}
 

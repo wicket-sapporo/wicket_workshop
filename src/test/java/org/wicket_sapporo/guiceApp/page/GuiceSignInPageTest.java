@@ -30,7 +30,7 @@ public class GuiceSignInPageTest {
 				Module module = new Module() {
 					@Override
 					public void configure(Binder binder) {
-						// 以下、Mockito関係のクラスををstatic importしているのでメソッドのみ呼び出し
+						// 以下、Mockito関係のクラスをstatic importしているのでメソッドのみ呼び出し
 						// IGuiceAuthService のモックオブジェクトが作成される
 						IGuiceAuthService mAuthService = mock(IGuiceAuthService.class);
 						// certify メソッドにどんな値が来ても、falseを返す（認証失敗の体で）

@@ -38,7 +38,7 @@ public class SpringSignInPageTest {
 		tester = new WicketTester(new SpringApplication() {
 			@Override
 			protected void initSpring() {
-				// 以下、Mockito関係のクラスををstatic importしているのでメソッドのみ呼び出し
+				// 以下、Mockito関係のクラスをstatic importしているのでメソッドのみ呼び出し
 				// ISpringAuthService のモックオブジェクトが作成される
 				ISpringAuthService mAuthService = mock(ISpringAuthService.class);
 				// certify メソッドにどんな値が来ても、falseを返す（認証失敗の体で）

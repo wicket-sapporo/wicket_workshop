@@ -16,6 +16,8 @@
  */
 package org.wicket_sapporo.guiceApp.service;
 
+import org.slf4j.LoggerFactory;
+
 /**
  * 認証サービスの実装クラス（の体で）
  *
@@ -26,7 +28,7 @@ public class GuiceAuthService implements IGuiceAuthService {
 	@Override
 	public boolean certify(String userId, String passphrase) {
 		// 本来であれば、DBやディレクトリサービスなどを通じた認証処理が発生する
-		System.out.println(this.getClass().getName() + "#certify is called.");
+		LoggerFactory.getLogger(this.getClass()).info("#certify(String, String) is called.");
 		return passphrase.equals("guice1234");
 	}
 
