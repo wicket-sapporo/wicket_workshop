@@ -1,4 +1,4 @@
-#Wicket Workshop
+Wicket Workshop
 ================
 
 ##はじめに
