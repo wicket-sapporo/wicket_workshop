@@ -9,6 +9,7 @@ Running the project with Maven:
 
 	$ mvn jetty:run
 
-When OutOfMemoryError of PermGen space occurs, set MaxPermSize.
+When OutOfMemoryError of PermGen space occurs, set MaxPermSize.  
+For example:
 
 	$ export MAVEN_OPTS="-XX:MaxPermSize=128m"
