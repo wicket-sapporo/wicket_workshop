@@ -25,6 +25,6 @@ Wicket Workshop
 
 ## 注意
 このプロジェクトはDIコンテナを利用しているため、PermGen領域のOutOfMemoryErrorが発生する可能性があります。  
-その場合には、MaxPermSizeなどを実行環境のオプションに設定してください。
+その場合には、MaxPermSizeなどを実行環境のオプションに設定してください。例えば以下の様な形です。
 
 	$ export MAVEN_OPTS="-XX:MaxPermSize=128m"
