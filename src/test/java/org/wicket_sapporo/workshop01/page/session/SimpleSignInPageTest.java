@@ -44,7 +44,7 @@ public class SimpleSignInPageTest {
 		tester.startPage(new SimpleSignInPage(mAuthService));
 		FormTester formTester = tester.newFormTester("form");
 		formTester.setValue("userId", "abcd");
-		formTester.setValue("passphrase", "abcd");
+		formTester.setValue("passphrase", "1234");
 		formTester.submit();
 
 		// Sessionオブジェクトを呼び出す
